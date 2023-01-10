@@ -13,6 +13,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#if !defined(__APPLE__) && !defined(__STDC_LIB_EXT1__)
+#define memset_s(W, WL, V, OL) memset(W, V, OL)
+#endif
+
 /******** The Keccak-f[1600] permutation ********/
 
 /*** Constants. ***/
